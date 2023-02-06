@@ -5,5 +5,11 @@ services:
     container_name: kodexplorer
     environment:
     volumes:
+    - kodcloud-pvc:/var/www/html
     ports:    
       - "80:80"
+
+volumes:
+  kodcloud-pvc:
+    driver_opts:
+      class: csi-okteto-standard
